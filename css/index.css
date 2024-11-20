@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body, h1, h2, h3, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'orbitron', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo {
+  position: relative;
+  color: #00d4ff;
+  animation: glitch 2s infinite;
+}
+
+.logo span {
+  color: #ff00a6;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+}
+
+.navigation ul li {
+  margin: 0 1rem;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.navigation ul li a:hover {
+  color: #00d4ff;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: 'montserrat';
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100vw; /* Garante que ocupe toda a largura da viewport */
+  margin: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 2px solid rgba(0, 212, 255, 0.8);
+  border-bottom: 2px solid rgba(0, 212, 255, 0.8);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem; /* Espaçamento entre os itens */
+  animation: scroll-left 10s linear infinite; /* Animação para percorrer o carrossel */
+  white-space: nowrap;
+  font-size: 1.5rem;
+  color: rgba(0, 212, 255, 0.9);
+  padding: 1rem 0;
+  margin: 0; /* Remove qualquer margem */
+}
+.carousel-track:hover {
+  animation-play-state: paused; /* Pausa a animação */
+}
+
+.carousel-track span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(0, 212, 255, 0.5);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-100%); /* Começa completamente fora da tela à esquerda */
+  }
+  50% {
+    transform: translateX(0); /* Move até alinhar a primeira parte visível */
+  }
+  100% {
+    transform: translateX(100%); /* Percorre todo o conteúdo até o final à direita */
+  }
+}
+
+.carousel-track span:hover {
+  background: #2c5364; 
+  font-weight: bold;
+  transform: scale(1.1); /* Efeito de leve aumento */
+}
+
+
+/* Features Section */
+.features {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #2c5364;
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #00d4ff;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  font-family: 'montserrat';
+  color: #ffffff;
+
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #203a43;
+  color: #ffffff;
+  font-family: 'montserrat';
+}
+
+
+
+
+@keyframes glitch {
+  0% {
+      text-shadow: 2px 2px #ff00a6, -2px -2px #00d4ff;
+  }
+  50% {
+      text-shadow: -2px -2px #ff00a6, 2px 2px #00d4ff;
+  }
+  100% {
+      text-shadow: 2px -2px #ff00a6, -2px 2px #00d4ff;
+  }}
